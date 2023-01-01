@@ -1,9 +1,6 @@
 # go-gql
 Here's a blank template to get started:
 
-<p align="center">
-  <img width="250" height="200" src="logo.png">
-</p>
 
 <!-- GETTING STARTED -->
 ## Getting Started
