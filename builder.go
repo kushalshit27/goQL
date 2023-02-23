@@ -17,18 +17,17 @@ type GoQLBuilder interface {
 
 type goQLBuilder struct {
 	url     string
-	timeout int
+	timeout int // second
 	retry   int
 	body    io.Reader
 	method  string
 	headers map[string]string
-	version  string
+	version string
 }
 
 func New() GoQLBuilder {
 	return &goQLBuilder{
 		headers: make(map[string]string, 0),
-		timeout: 3,
 		version: Version,
 	}
 }
@@ -60,7 +59,34 @@ func (g *goQLBuilder) SetPayload(r io.Reader) GoQLBuilder {
 	return g
 }
 
+func (g *goQLBuilder) setDefault() {
+
+	// set default method
+	if g.method == "" {
+		g.method = "POST"
+	}
+
+	// set default header
+	_, found := g.headers["User-Agent"]
+	if !found {
+		g.SetHeader("User-Agent", "go-QL-client")
+	}
+
+	_, found = g.headers["Content-Type"]
+	if !found {
+		g.SetHeader("Content-Type", "application/json")
+	}
+
+	// set default timeout
+	if g.timeout == 0 {
+		g.timeout = 3
+	}
+}
+
 func (g *goQLBuilder) Build() GoQLClient {
+
+	g.setDefault()
+
 	return &GoQL{
 		url:     g.url,
 		timeout: g.timeout,
