@@ -22,12 +22,14 @@ type goQLBuilder struct {
 	body    io.Reader
 	method  string
 	headers map[string]string
+	version  string
 }
 
 func New() GoQLBuilder {
 	return &goQLBuilder{
 		headers: make(map[string]string, 0),
 		timeout: 3,
+		version: Version,
 	}
 }
 

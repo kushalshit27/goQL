@@ -12,7 +12,7 @@ import (
 )
 
 type GoQLClientRunner interface {
-	Run(ctx context.Context) bool
+	Run(ctx context.Context) interface{}
 	RawReq() GoQLClientRunner
 	RawRes() GoQLClientRunner
 }
@@ -37,7 +37,7 @@ func (r *Runner) RawRes() GoQLClientRunner {
 	return r
 }
 
-func (r *Runner) Run(ctx context.Context) bool {
+func (r *Runner) Run(ctx context.Context) interface{} {
 	ctx, cancel := context.WithTimeout(ctx, time.Second*time.Duration(r.timeoutSec))
 	defer cancel()
 	req, err := http.NewRequest(r.method, r.url, bytes.NewBuffer(r.body))
@@ -75,8 +75,8 @@ func (r *Runner) Run(ctx context.Context) bool {
 	if err != nil {
 		L.Panic("ERROR from Unmarshal response", err)
 	}
-	L.Println("\n----Final:----\n", response)
-	return true
+	//L.Println("\n----Final:----\n", response)
+	return response
 }
 
 func (r *Runner) printRawRequest(req *http.Request) {

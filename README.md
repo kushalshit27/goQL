@@ -1,46 +1,36 @@
-# go-gql
-Here's a blank template to get started:
+# goQL
+goQL is a graphql HTTP client,with :battery: included
 
 
 <!-- GETTING STARTED -->
-## Getting Started
+## ⚡️ Quickstart
 
-To get a local copy up and running follow these simple steps.
+```go
+package main
 
-### Prerequisites
+import "github.com/kushalshit27/goQL"
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+func main() {
+   const GRAPHQL_URL = "{{ graphql URL }}"
+	c := goQL.New().
+            SetURL(GRAPHQL_URL).
+            SetMethod("POST").
+            Build()
 
-### Installation
+	query := goQL.Query{
+		Query: QUERY,
+	}
 
-1. Clone the repo
-   ```sh
-   git clone https://github.com/github_username/repo_name.git
-   ```
-2. Install NPM packages
-   ```sh
-   npm install
-   ```
+	response := c.Query(query).Run(context.TODO())
+
+	log.Println(response)
+}
+```
 
 
 ## Usage
 
-### 1: frontend url 
-```
-   http://localhost:3000/
-```
-### 2: backend api endpoint 
-```http
- GET http://localhost:3005/api
-```
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+_For more examples, please refer to the [example](example)_
 
 
 
