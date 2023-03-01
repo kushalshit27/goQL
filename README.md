@@ -1,6 +1,7 @@
 # goQL
 goQL is a graphql HTTP client,with :battery: included
 
+![goQL-logo](goql_icon.png)
 
 <!-- GETTING STARTED -->
 ## ⚡️ Quickstart
