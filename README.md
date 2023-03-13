@@ -13,13 +13,22 @@ import "github.com/kushalshit27/goQL"
 
 func main() {
    	const GRAPHQL_URL = "{{ graphql URL }}"
+	
 	c := goQL.New().
             SetURL(GRAPHQL_URL).
             SetMethod("POST").
             Build()
+	
+	q:= `query {
+		post(id: 1) {
+		  id
+		  title
+		  body
+		}
+            }`
 
 	query := goQL.Query{
-		Query: QUERY,
+		Query: q,
 	}
 
 	response := c.Query(query).Run(context.TODO())
