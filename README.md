@@ -20,7 +20,7 @@ func main() {
             Build()
 	
 	q:= `query {
-		post(id: 1) {
+		post {
 		  id
 		  title
 		  body
