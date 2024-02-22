@@ -4,8 +4,7 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
-	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/http/httputil"
 	"time"
@@ -63,19 +62,18 @@ func (r *Runner) Run(ctx context.Context) interface{} {
 	if r.rawRes {
 		r.printRawResponse(resp)
 	}
-	//L.Println("RESPONSE STATUS", resp.StatusCode)
-	body, err := ioutil.ReadAll(resp.Body)
+
+	body, err := io.ReadAll(resp.Body)
 	if err != nil {
 		L.Panic("ERROR from ReadAll body", err)
 	}
-	//L.Println(string(body))
 
 	var response interface{}
 	err = json.Unmarshal(body, &response)
 	if err != nil {
 		L.Panic("ERROR from Unmarshal response", err)
 	}
-	//L.Println("\n----Final:----\n", response)
+
 	return response
 }
 
@@ -85,7 +83,7 @@ func (r *Runner) printRawRequest(req *http.Request) {
 		L.Fatal(err)
 	}
 
-	fmt.Printf("----------------:REQUEST:----------------\n%s", string(reqDump))
+	L.Printf("----------------:REQUEST:----------------\n%s", string(reqDump))
 }
 
 func (r *Runner) printRawResponse(resp *http.Response) {
@@ -94,5 +92,5 @@ func (r *Runner) printRawResponse(resp *http.Response) {
 		L.Fatal(err)
 	}
 
-	fmt.Printf("\n----------------:RESPONSE:----------------\n%s", string(respDump))
+	L.Printf("\n----------------:RESPONSE:----------------\n%s", string(respDump))
 }

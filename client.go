@@ -5,6 +5,9 @@ import (
 	"io"
 )
 
+// GoQLClient is an interface for a GraphQL HTTP client.
+//
+// It provides two methods, `Query()` and `Mutation()`, for making GraphQL queries and mutations, respectively.
 type GoQLClient interface {
 	Query(q Query) GoQLClientRunner
 	Mutation(m Query) GoQLClientRunner
@@ -19,11 +22,10 @@ type GoQL struct {
 	headers map[string]string
 }
 
-// Query implements GoQLClient
 func (g *GoQL) Query(query Query) GoQLClientRunner {
 	body, err := json.Marshal(query)
 	if err != nil {
-		L.Fatal("Query error:", err)
+		L.Fatal("[Query] Query error:", err)
 	}
 	return &Runner{
 		method:     g.method,
@@ -34,11 +36,10 @@ func (g *GoQL) Query(query Query) GoQLClientRunner {
 	}
 }
 
-// Mutation implements GoQLClient
 func (g *GoQL) Mutation(query Query) GoQLClientRunner {
 	body, err := json.Marshal(query)
 	if err != nil {
-		L.Fatal("Query error:", err)
+		L.Fatal("[Mutation] Query error:", err)
 	}
 	return &Runner{
 		method:     g.method,

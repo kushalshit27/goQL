@@ -4,14 +4,13 @@ import (
 	"io"
 )
 
-// Version of current goql package
-const Version = "1.0.0"
-
 type GoQLBuilder interface {
 	SetURL(url string) GoQLBuilder
 	SetHeader(name, value string) GoQLBuilder
 	SetPayload(r io.Reader) GoQLBuilder
 	SetMethod(method string) GoQLBuilder
+	SetTimeout(seconds int) GoQLBuilder
+	SetRetry(retryCount int) GoQLBuilder
 	Build() GoQLClient
 }
 
@@ -55,6 +54,18 @@ func (g *goQLBuilder) SetHeader(name, value string) GoQLBuilder {
 
 func (g *goQLBuilder) SetPayload(r io.Reader) GoQLBuilder {
 	g.body = r
+
+	return g
+}
+
+func (g *goQLBuilder) SetTimeout(seconds int) GoQLBuilder {
+	g.timeout = seconds
+
+	return g
+}
+
+func (g *goQLBuilder) SetRetry(retryCount int) GoQLBuilder {
+	g.retry = retryCount
 
 	return g
 }
