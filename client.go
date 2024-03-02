@@ -13,7 +13,6 @@ type GoQLClient interface {
 	Mutation(m Query) GoQLClientRunner
 }
 
-
 type GoQL struct {
 	url     string
 	timeout int
@@ -22,7 +21,6 @@ type GoQL struct {
 	method  string
 	headers map[string]string
 }
-
 
 func (g *GoQL) Query(query Query) GoQLClientRunner {
 	body, err := json.Marshal(query)
@@ -37,7 +35,6 @@ func (g *GoQL) Query(query Query) GoQLClientRunner {
 		timeoutSec: g.timeout,
 	}
 }
-
 
 func (g *GoQL) Mutation(query Query) GoQLClientRunner {
 	body, err := json.Marshal(query)

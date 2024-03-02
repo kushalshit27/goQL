@@ -25,8 +25,16 @@ func Mutation() {
 		},
 	}
 
-	c.Mutation(query).
+	res, err := c.Mutation(query).
 		RawReq().
+		RawRes().
 		Run(context.TODO())
+
+	if err != nil {
+		log.Println("Client error:", err)
+		return
+	}
+
+	log.Println("Client Response", res)
 
 }
