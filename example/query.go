@@ -3,6 +3,8 @@ package example
 import (
 	"context"
 	"log"
+	"strings"
+	"time"
 
 	goQL "github.com/kushalshit27/goQL"
 )
@@ -21,9 +23,20 @@ func Query() {
 		Query: QUERY,
 	}
 
-	c.Query(query).
-		RawReq().
-		RawRes().
+	res, err := c.Query(query).
+		Debug().
+		RetryAttempts(2).
+		RetryBackoff(goQL.LinearBackoff(time.Second)).
+		RetryOn(func(err error) bool {
+			return strings.Contains(err.Error(), "timeout")
+		}).
+		RetryAllowStatus(func(status int) bool { return status >= 400 && status < 500 }).
 		Run(context.TODO())
+	if err != nil {
+		log.Println("Client error:", err)
+		return
+	}
+
+	log.Println("Client Response", res)
 
 }
