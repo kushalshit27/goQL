@@ -1,15 +1,13 @@
-package goQL_test
+package goQL
 
 import (
 	"testing"
-
-	"github.com/kushalshit27/goQL"
 )
 
 func TestQueryStruct(t *testing.T) {
-	query := goQL.Query{
+	query := Query{
 		Query: "query { test }",
-		Variables: goQL.Variables{
+		Variables: Variables{
 			Filter: "filter",
 			Input:  "input",
 		},

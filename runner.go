@@ -42,8 +42,6 @@ type Runner struct {
 
 func (r *Runner) Debug() GoQLClientRunner {
 	r.debug = true
-	// r.RawReq()
-	// r.RawRes()
 	return r
 }
 
@@ -133,7 +131,7 @@ func (r *Runner) Run(ctx context.Context) (GoQLClientResponse, *GoQLClientError)
 	if err := json.Unmarshal(body, &response); err == nil {
 		if errors, ok := response["errors"]; ok {
 			for _, err := range errors.([]interface{}) {
-				errMsg := fmt.Sprintf("GraphQL error: message: %s\n", err.(map[string]interface{})["message"])
+				errMsg := fmt.Sprintf("GraphQL error message: %s\n", err.(map[string]interface{})["message"])
 				return nil, &GoQLClientError{
 					Description: errMsg,
 				}

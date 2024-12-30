@@ -1,13 +1,11 @@
-package goQL_test
+package goQL
 
 import (
 	"testing"
-
-	"github.com/kushalshit27/goQL"
 )
 
 func TestGoQLBuilder(t *testing.T) {
-	builder := goQL.New().
+	builder := New().
 		SetURL("http://example.com").
 		SetMethod("POST").
 		SetTimeout(10).

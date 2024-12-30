@@ -102,7 +102,7 @@ func doWithRetry(ctx context.Context, req *http.Request, reqTimeout time.Duratio
 			return resp, nil
 		}
 
-		fmt.Println("options.RetryOn(err)", options.RetryOn)
+		//fmt.Println("options.RetryOn(err)", options.RetryOn)
 
 		if !options.RetryOn(err) {
 			// Error is not eligible for retry
