@@ -8,7 +8,7 @@ import (
 	goQL "github.com/kushalshit27/goQL"
 )
 
-func Mutation() {
+func Mutation() { // coverage-ignore
 	log.Println("running mutation example")
 	c := goQL.New().
 		SetURL(URL_GQL).
