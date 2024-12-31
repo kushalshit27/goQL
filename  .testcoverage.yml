@@ -1,4 +1,0 @@
-profile: cover.out
-exclude:
-  paths:
-    - ^example
