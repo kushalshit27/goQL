@@ -2,7 +2,9 @@ name: Go test coverage check
 
 on:
   pull_request:
-    branches: [dev]
+    branches: [main]
+  push:
+    branches: [main]
 
 jobs:
   test-coverage:
@@ -17,5 +19,5 @@ jobs:
       - name: check test coverage
         uses: vladopajic/go-test-coverage@v2
         with:
-          config: ./.testcoverage.yml
+          profile: cover.out
 

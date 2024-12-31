@@ -1,14 +1,14 @@
 package example
 
-const URL_GQL = "" // Your test url
-const METHOD = "POST"
+const URL_GQL = ""                                                            // Your test url
+const METHOD = "POST"                                                         // coverage-ignore
 const QUERY = `query {
 	post(id: 1) {
 	  id
 	  title
 	  body
 	}
-  }`
+  }` // coverage-ignore
 
 const MUTATION = `mutation ($input: CreatePostInput!) {
 	createPost(input: $input) {
@@ -16,7 +16,7 @@ const MUTATION = `mutation ($input: CreatePostInput!) {
 	  title
 	  body
 	}
-}`
+}` // coverage-ignore
 
 var MUTATION_INPUT = struct {
 	Title string `json:"title,omitempty"`
@@ -24,6 +24,6 @@ var MUTATION_INPUT = struct {
 }{
 	Title: "New Post Title",
 	Body:  "Some interesting content.",
-}
+} // coverage-ignore
 
-const HTTPTimeoutSec = 2
+const HTTPTimeoutSec = 2 // coverage-ignore

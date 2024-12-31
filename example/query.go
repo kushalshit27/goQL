@@ -9,7 +9,7 @@ import (
 	goQL "github.com/kushalshit27/goQL"
 )
 
-func Query() {
+func Query() { // coverage-ignore
 	log.Println("running query example")
 	c := goQL.New().
 		SetURL(URL_GQL).
