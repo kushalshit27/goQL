@@ -2,7 +2,7 @@
 layout: default
 title: Uninstall GoQL
 parent: Install GoQL
-nav_order: 2
+nav_order: 3
 description: "Instructions to uninstall GoQL"
 ---
 
