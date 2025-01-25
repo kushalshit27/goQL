@@ -2,7 +2,14 @@
 layout: default
 title: Quickstart
 nav_order: 4
+has_children: true
 ---
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC 
+{:toc}
 
 ## ⚡️ Quickstart
 
@@ -37,5 +44,5 @@ func main() {
 }
 ```
 
-For advanced config see [configuration](configuration.md) section.
+For advanced config see configuration section.
 
