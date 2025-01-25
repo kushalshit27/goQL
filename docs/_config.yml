@@ -26,7 +26,6 @@ callouts:
   note:
     title: Note
     color: purple
-    opacity: 0.3
   warning:
     title: Warning
     color: red
