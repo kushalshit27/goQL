@@ -12,3 +12,8 @@ nav_order: 2
 go get -u github.com/kushalshit27/goQL
 ```
 Get [latest stable release](https://github.com/kushalshit27/goQL/releases).
+{: .fs-6 .fw-300 }
+
+## Let's get started
+[get started](../../quickstart)!
+
