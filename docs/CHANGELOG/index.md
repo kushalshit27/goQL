@@ -10,7 +10,7 @@ nav_order: 5
 ## v1.2.0
 {: .fs-6 }
 
-{: .new }
+{: .note }
 > New (v1.2.0)
 >
 >   - `goQL.Query` and `goQL.Mutation` support more features like:
@@ -24,7 +24,7 @@ nav_order: 5
 ## v1.0.0
 {: .fs-6 }
 
-{: .new }
+{: .note }
 > New (v1.0.0)
 >
 >   - GraphQL query builder with support for query.
