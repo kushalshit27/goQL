@@ -1,8 +1,15 @@
 ---
-title: Home
-layout: home
+layout: default
+title: GoQL
+nav_order: 1
+description: "Bravetools is an end-to-end System Container management platform. Bravetools makes it easy to configure, build, and deploy reproducible and isolated environments either on single machines or large clusters."
 ---
 
-This is a *bare-minimum* template to create a Jekyll site that uses the [Just the Docs] theme. You can easily set the created site to be published on [GitHub Pages] – the [README] file explains how to do that, along with other details.
+# GoQL
+{: .fs-9 }
 
-IF [Jekyll] is installed on your computer, you can also build and preview the created site *locally*. This lets you test changes before committing them, and avoids waiting for GitHub Pages.[^1] And you will be able to deploy your local build to a different platform than GitHub Pages.
+GoQL is a light, featureful graphql http client with 🔋 included.
+{: .fs-6 .fw-300 }
+
+
+[Get started now](installation){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 } [View it on GitHub](https://github.com/kushalshit27/goQL){: .btn .fs-5 .mb-4 .mb-md-0 }

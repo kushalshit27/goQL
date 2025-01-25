@@ -1,26 +1,25 @@
 # Welcome to Jekyll!
 
 title: GoQL
-description: goQL is a light, featureful graphql http client with 🔋 included.>- # this means to ignore newlines until "baseurl:"
+description: GoQL is a light, featureful graphql http client with 🔋 included.>- # this means to ignore newlines until "baseurl:"
 
 baseurl: "/goQL"
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: goQL
 github_username:  goQL
 
-permalink: pretty
+color_scheme: dark
 search_enabled: true
 heading_anchors: true
+nav_enabled: true
 
 # Build settings
 #theme: just-the-docs
 theme: just-the-docs
-plugins:
-  - jekyll-feed
+
 
 # Aux links
 aux_links:
-  "goQL on GitHub":
+  "GoQL on GitHub":
     - "//github.com/kushalshit27/goQL"
 
 # Makes Aux links open in a new tab. Default is false
@@ -30,9 +29,3 @@ aux_links_new_tab: false
 back_to_top: true
 back_to_top_text: "Back to top"
 footer_content: "Copyright &copy; 2025"
-
-gh_edit_link: true # show or hide edit this page link
-gh_edit_link_text: "Edit this page on GitHub."
-gh_edit_repository: "https://github.com/kushalshit27/goQL" # the github URL for your repo
-gh_edit_branch: "master" # the branch that your docs is served from
-gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
