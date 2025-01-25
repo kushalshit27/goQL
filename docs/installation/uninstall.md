@@ -11,7 +11,7 @@ Remove the usage of the package from your codebase and run the following command
 ```
 go mod tidy
 ```
-{: .highlight }
-Note: the above command will remove all the unused dependencies from your go.mod file.
+
+{: .highlight } Note: the above command will remove all the unused dependencies from your go.mod file.
 
 
