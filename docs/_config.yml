@@ -19,6 +19,8 @@ theme: just-the-docs
 
 # Aux links
 aux_links:
+  "★":
+    - "//github.com/kushalshit27/star"
   "GoQL on GitHub":
     - "//github.com/kushalshit27/goQL"
 
