@@ -7,7 +7,7 @@ baseurl: "/goQL"
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  goQL
 
-color_scheme: dark
+color_scheme: light
 search_enabled: true
 heading_anchors: true
 nav_enabled: true
