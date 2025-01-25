@@ -15,5 +15,5 @@ Get [latest stable release](https://github.com/kushalshit27/goQL/releases).
 {: .fs-6 .fw-300 }
 
 ## Let's get started
-[get started](../../quickstart)!
+[get started](https://kushalshit27.github.io/goQL/Quickstart/)
 
