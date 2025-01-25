@@ -1,0 +1,62 @@
+# Welcome to Jekyll!
+
+title: GoQL
+description: GoQL is a light, featureful graphql http client with 🔋 included.>- # this means to ignore newlines until "baseurl:"
+
+baseurl: "/goQL"
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  goQL
+
+color_scheme: light
+search_enabled: true
+heading_anchors: true
+nav_enabled: true
+
+
+callouts_level: quiet # or loud
+callouts:
+  highlight:
+    color: yellow
+  important:
+    title: Important
+    color: blue
+  new:
+    title: New
+    color: green
+  note:
+    title: Note
+    color: purple
+  warning:
+    title: Warning
+    color: red
+
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  startings: []
+  blanklines: false
+  profile: false
+  # ignore:
+  #   envs: all
+
+
+
+# Build settings
+#theme: just-the-docs
+theme: just-the-docs
+
+
+# Aux links
+aux_links:
+  "GoQL on GitHub":
+    - "//github.com/kushalshit27/goQL"
+
+# Makes Aux links open in a new tab. Default is false
+aux_links_new_tab: false
+
+# Back to top link
+back_to_top: true
+back_to_top_text: "Back to top"
+footer_content: "Copyright &copy; 2025"
