@@ -3,7 +3,7 @@ layout: default
 title: Install GoQL
 description: Installation instructions for GoQL
 has_children: true
-nav_order: 2
+nav_order: 1
 ---
 
 
