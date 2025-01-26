@@ -5,7 +5,7 @@ nav_order: 1
 description: "GoQL is a light, featureful graphql http client with 🔋 included."
 ---
 
-![goql.svg](assets/goql.svg)
+![goql.svg](assets/goql.svg){: height="200" width="200" }
 
 
 GoQL is a light, featureful graphql http client with 🔋 included.
