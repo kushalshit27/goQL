@@ -15,26 +15,25 @@ package main
 import "github.com/kushalshit27/goQL"
 
 func main() {
-   	const GRAPHQL_URL = "{{ graphql URL }}"
-	
-	c := goQL.New().
-            SetURL(GRAPHQL_URL).
-            SetMethod("POST").
-            Build()
-	
-	q:= `query {
-		post {
-		  id
-		  title
-		  body
-		}
-            }`
+   	const GRAPHQL_URL = "{{ graphql URL }}" 
+	   
+	// This is a reusable client
+	client := goQL.New().
+            	SetURL(GRAPHQL_URL).
+            	SetMethod("POST").
+            	Build() 
 
 	query := goQL.Query{
-		Query: q,
-	}
+		Query: `query {
+                        post {
+                            id
+                            title
+                            body
+                        }
+                    }`,
+	        }
 
-	response := c.Query(query).Run(context.TODO())
+	response := client.Query(query).Run(context.TODO())
 
 	log.Println(response)
 }
