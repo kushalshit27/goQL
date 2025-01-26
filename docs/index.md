@@ -6,6 +6,9 @@ description: "GoQL is a light, featureful graphql http client with 🔋 included
 ---
 
 # GoQL
+
+![goql.svg](assets/goql.svg)
+
 {: .fs-9 }
 
 GoQL is a light, featureful graphql http client with 🔋 included.
