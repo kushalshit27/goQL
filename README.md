@@ -21,17 +21,19 @@ func main() {
 	client := goQL.New().
             	SetURL(GRAPHQL_URL).
             	SetMethod("POST").
-            	Build() 
+            	Build()
+
+	q:= `query {
+		post {
+		  id
+		  title
+		  body
+		}
+            }`
 
 	query := goQL.Query{
-		Query: `query {
-                        post {
-                            id
-                            title
-                            body
-                        }
-                    }`,
-	        }
+		Query: q,
+	}
 
 	response := client.Query(query).Run(context.TODO())
 
