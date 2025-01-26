@@ -17,7 +17,7 @@ import "github.com/kushalshit27/goQL"
 func main() {
    	const GRAPHQL_URL = "{{ graphql URL }}" 
 	   
-	// This is a reusable client that can be used to make multiple queries 
+	// This is a reusable client
 	client := goQL.New().
             	SetURL(GRAPHQL_URL).
             	SetMethod("POST").
